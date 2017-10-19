@@ -40,4 +40,9 @@ namespace AFG_Games
 		if (toupper(response) == 'Y') return PlayGame();
 		std::cout << "Thanks for playing " << name() <<"!"<<std::endl;
 	}
+	GameAssetArgs& IGame::Assets(int argc, char *argv[])
+	{
+		static GameAssetArgs _Assests(argc, argv);
+		return _Assests;
+	}
 }

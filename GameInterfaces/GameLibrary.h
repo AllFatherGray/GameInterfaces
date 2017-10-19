@@ -1,6 +1,7 @@
 #pragma once
 #include "IGame.h"
 #include "TicTacToeCompleteEdition.h"
+#include "BattleShipGame.h"
 #include <vector>
 namespace AFG_Games 
 {
@@ -8,12 +9,13 @@ namespace AFG_Games
 	{
 	public:
 		// Call this in main()
-		static void OpenMenu();
+		static void OpenMenu(int argc, char *argv[]);
 		static unsigned NumberOfGames();
-	private:
-		// Add Games Here
 		GameLibrary();
 		~GameLibrary();
+	private:
+		// Add Games Here
+		
 		std::vector<IGame*> Index_of_Games;
 	};
 }

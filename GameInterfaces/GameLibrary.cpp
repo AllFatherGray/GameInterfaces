@@ -1,8 +1,11 @@
 #include "GameLibrary.h"
 namespace AFG_Games
 {
-	void  GameLibrary::OpenMenu()
+	void  GameLibrary::OpenMenu(int argc, char *argv[])
 	{
+		srand(time(0));
+		IGame::Assets(argc, argv);
+		//IGame::Assets().Print();
 		char response;
 		IGame* CurrentGame;
 		do 
@@ -28,8 +31,8 @@ namespace AFG_Games
 		return Instance().Index_of_Games.size();
 	}
 	GameLibrary::GameLibrary()
-	{
-		Index_of_Games = { &TicTacToeCompleteEdition::Instance() };
+	{//, &BattleShipGame::Instance()
+		Index_of_Games = { &TicTacToeCompleteEdition::Instance(), &BattleShipGame<10>::Instance() };
 	}
 	GameLibrary::~GameLibrary()
 	{
